@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-inter: 'Inter', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-text-primary antialiased;
+    font-family: var(--font-inter);
+  }
+
+  body.dark {
+    @apply bg-gray-950 text-white;
+  }
+
+  ::selection {
+    @apply bg-brand-blue/20 text-brand-blue;
+  }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-gray-100 dark:bg-gray-900; }
+  ::-webkit-scrollbar-thumb { @apply bg-gray-300 dark:bg-gray-700 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-brand-blue/60; }
+}
+
+@layer utilities {
+  .text-brand-gradient {
+    @apply bg-gradient-to-r from-brand-blue to-brand-green bg-clip-text text-transparent;
+  }
+  .bg-brand-gradient {
+    background: linear-gradient(135deg, #1565C0 0%, #22C55E 100%);
+  }
+  .btn-brand {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-semibold text-white text-sm
+           transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95;
+    background: linear-gradient(135deg, #1565C0 0%, #22C55E 100%);
+  }
+  .btn-brand:hover {
+    box-shadow: 0 8px 24px rgba(21, 101, 192, 0.35);
+  }
+  .btn-outline-brand {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm
+           border-2 transition-all duration-300 hover:scale-105 active:scale-95;
+    border-color: #1565C0;
+    color: #1565C0;
+  }
+  .btn-outline-brand:hover {
+    background: linear-gradient(135deg, #1565C0 0%, #22C55E 100%);
+    color: white;
+    border-color: transparent;
+  }
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
+  }
+  .section-padding {
+    @apply py-20 lg:py-28;
+  }
+}

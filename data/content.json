@@ -1,0 +1,241 @@
+{
+  "site": {
+    "name": "TAMKEEN",
+    "tagline": "Energy Solutions & General Trading",
+    "logoText": "TAMKEEN",
+    "footerDesc": "TAMKEEN is a premier engineering solutions provider, specializing in power distribution, marine automation, and industrial infrastructure. We deliver reliability where it matters most—from the depths of the ocean to the heart of the power grid."
+  },
+  "hero": {
+    "headline": "Engineering the Future of Global Energy.",
+    "subheadline": "From high-voltage power management to offshore automation, TAMKEEN delivers turnkey industrial solutions with uncompromised safety and precision.",
+    "ctaPrimary": "Explore Capabilities",
+    "ctaSecondary": "Talk to an Expert"
+  },
+  "heroSlides": [
+    {
+      "id": 1,
+      "image": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1920&q=80",
+      "tag": "Power Generation",
+      "headline": "Engineering the Future of Global Energy",
+      "subheadline": "Turnkey power solutions from 10MW to 500MW — delivering reliability that powers entire nations.",
+      "cta": "Explore Power Solutions",
+      "href": "/services/power-gen"
+    },
+    {
+      "id": 2,
+      "image": "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1920&q=80",
+      "tag": "Solar & Renewables",
+      "headline": "Harnessing the Sun. Powering the World.",
+      "subheadline": "Utility-scale solar farms and advanced BESS deployments that redefine sustainable infrastructure.",
+      "cta": "Discover Solar Solutions",
+      "href": "/services/ev-solar"
+    },
+    {
+      "id": 3,
+      "image": "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1920&q=80",
+      "tag": "Wind Energy",
+      "headline": "Where Innovation Meets the Horizon.",
+      "subheadline": "Advanced wind energy systems and grid integration services for a cleaner tomorrow.",
+      "cta": "View Wind Projects",
+      "href": "/services"
+    },
+    {
+      "id": 4,
+      "image": "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80",
+      "tag": "Industrial Automation",
+      "headline": "Precision Engineering. Zero Compromise.",
+      "subheadline": "PLC/SCADA integration, industrial electrical infrastructure, and factory-floor power optimization.",
+      "cta": "Explore Industrial Services",
+      "href": "/services/industrial-electrical"
+    },
+    {
+      "id": 5,
+      "image": "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=1920&q=80",
+      "tag": "Marine & Offshore",
+      "headline": "Built for the High Seas. Trusted Worldwide.",
+      "subheadline": "Dynamic positioning, ruggedized power systems, and offshore automation for the harshest environments.",
+      "cta": "View Marine Services",
+      "href": "/services/marine-auto"
+    }
+  ],
+  "stats": [
+    { "value": "15+", "label": "Years of Excellence" },
+    { "value": "240+", "label": "Major Projects Delivered" },
+    { "value": "12", "label": "Countries Served" },
+    { "value": "99.7%", "label": "Operational Uptime" }
+  ],
+  "services": [
+    {
+      "id": "power-gen",
+      "title": "Power Generation & Distribution",
+      "description": "Supply of high-grade turbines, switchgears, and load management systems for thermal and renewable plants. We ensure seamless synchronization with national grids.",
+      "icon": "FaBolt",
+      "image": "https://images.unsplash.com/photo-1513828583688-c52646db42da?w=700&q=80"
+    },
+    {
+      "id": "marine-auto",
+      "title": "Marine & Offshore Automation",
+      "description": "Advanced navigation controls, dynamic positioning systems, and ruggedized power distribution for commercial fleets and offshore drilling rigs.",
+      "icon": "FaShip",
+      "image": "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=700&q=80"
+    },
+    {
+      "id": "industrial-electrical",
+      "title": "Industrial Electrical Infrastructure",
+      "description": "End-to-end automation, PLC/SCADA integration, and factory power optimization for heavy industries including steel, cement, and mining.",
+      "icon": "FaMicrochip",
+      "image": "https://images.unsplash.com/photo-1565514158740-064f34bd6cfd?w=700&q=80"
+    },
+    {
+      "id": "ev-solar",
+      "title": "EV Ecosystem & Solar Integration",
+      "description": "High-capacity DC fast chargers, utility-scale solar farm installations, and advanced battery energy storage systems (BESS) for peak load shifting.",
+      "icon": "FaSolarPanel",
+      "image": "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=700&q=80"
+    },
+    {
+      "id": "oil-gas",
+      "title": "Oil & Gas Equipment",
+      "description": "Strategic sourcing and supply of upstream/downstream drilling components, high-pressure valves, and complete refinery process equipment packages.",
+      "icon": "FaOilCan",
+      "image": "https://images.unsplash.com/photo-1518709414768-a88981a4515d?w=700&q=80"
+    },
+    {
+      "id": "turbine-services",
+      "title": "Turbine Lifecycle Services",
+      "description": "Comprehensive maintenance, performance tuning, rotor overhauls, and rapid spare parts supply for both gas and steam turbines.",
+      "icon": "FaCogs",
+      "image": "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=700&q=80"
+    }
+  ],
+  "about": {
+    "title": "More than a supplier. We are your operational backbone.",
+    "description": "TAMKEEN bridges the gap between complex engineering blueprints and on-ground execution. Our ethos is built on reliability—ensuring that every megawatt and every marine vessel operates at peak efficiency, safely, and without interruption. We combine a global sourcing network with deep local technical expertise to solve the toughest energy challenges."
+  },
+  "process": [
+    {
+      "step": "01",
+      "title": "Consultation & Assessment",
+      "description": "We begin by deeply understanding your operational requirements, site conditions, and project goals through expert technical consultation."
+    },
+    {
+      "step": "02",
+      "title": "Engineering & Design",
+      "description": "Our engineers develop precise technical specifications, schematics, and procurement plans aligned with international standards."
+    },
+    {
+      "step": "03",
+      "title": "Execution & Deployment",
+      "description": "From procurement to installation, our certified teams execute every phase with precision, safety, and strict timeline adherence."
+    },
+    {
+      "step": "04",
+      "title": "Commissioning & Support",
+      "description": "We hand over fully tested, commissioned systems backed by our 24/7 technical support and rapid-response maintenance contracts."
+    }
+  ],
+  "projects": [
+    {
+      "title": "50MW Solar Farm Grid Integration",
+      "location": "Rajasthan, India",
+      "description": "Complete turnkey installation of solar arrays, central inverters, and grid-sync protection systems commissioned within 6 months.",
+      "image": "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=700&q=80"
+    },
+    {
+      "title": "Offshore Platform PLC Retrofit",
+      "location": "Arabian Gulf",
+      "description": "Replaced obsolete legacy control systems with SIL-rated safety PLCs, reducing unplanned downtime by 40%.",
+      "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=700&q=80"
+    },
+    {
+      "title": "EV Charging Corridor Deployment",
+      "location": "Delhi-Mumbai Expressway",
+      "description": "Deployed 24 ultra-fast 240kW DC charging stations across 500 km, integrated with a centralized remote monitoring system.",
+      "image": "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=700&q=80"
+    }
+  ],
+  "team": [
+    {
+      "name": "Rajiv Sharma",
+      "role": "Chief Executive Officer",
+      "bio": "20+ years leading large-scale energy infrastructure projects across Asia and the Middle East. Former senior engineer at BHEL.",
+      "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80",
+      "linkedin": "#"
+    },
+    {
+      "name": "Arjun Mehta",
+      "role": "Chief Technical Officer",
+      "bio": "Expert in power systems engineering, PLC/SCADA integration, and renewable energy grid synchronization.",
+      "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80",
+      "linkedin": "#"
+    },
+    {
+      "name": "Priya Nair",
+      "role": "Head of Operations",
+      "bio": "Specialist in global supply chain management and logistics for heavy industrial equipment across 12 countries.",
+      "image": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80",
+      "linkedin": "#"
+    },
+    {
+      "name": "Ananya Singh",
+      "role": "Lead Marine Systems Engineer",
+      "bio": "Certified offshore automation specialist with hands-on experience in dynamic positioning and marine power management systems.",
+      "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80",
+      "linkedin": "#"
+    }
+  ],
+  "whyChoose": [
+    { "title": "Uncompromising Safety", "description": "We strictly adhere to ISO, OSHA, and API standards. Safety is never a secondary priority." },
+    { "title": "Global Sourcing Network", "description": "Direct OEM relationships and strategic global logistics ensure premium parts reach you faster." },
+    { "title": "24/7 Technical Support", "description": "Round-the-clock engineering hotline with rapid dispatch teams to minimize your operational downtime." },
+    { "title": "End-to-End Execution", "description": "We handle everything from conceptual design, procurement, installation, to final commissioning." }
+  ],
+  "testimonials": [
+    {
+      "name": "Capt. R. Singh",
+      "role": "Fleet Manager, Maritime Logistics Ltd.",
+      "text": "TAMKEEN's automation overhaul cut our fleet's fuel consumption by 12% in the first quarter. Their offshore team's technical acumen is unmatched.",
+      "rating": 5
+    },
+    {
+      "name": "A. Mehta",
+      "role": "Plant Head, Thermal Power Corp.",
+      "text": "We rely on them for critical turbine spares. Their delivery is consistently ahead of schedule, and the quality is always OEM-grade.",
+      "rating": 5
+    },
+    {
+      "name": "S. Kumar",
+      "role": "Project Director, GreenGrid Energy",
+      "text": "The 50MW solar integration was executed flawlessly. TAMKEEN's team brought both the technical depth and project discipline we needed.",
+      "rating": 5
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What is your typical lead time for turbine parts?",
+      "a": "For standard OEM parts, lead time is 4-6 weeks. For critical/custom orders, we expedite within 2-3 weeks using our express global sourcing channels."
+    },
+    {
+      "q": "Do you provide on-site installation and commissioning support?",
+      "a": "Absolutely. We provide full O&M (Operations & Maintenance) support, including on-site commissioning, engineer training, and remote diagnostic assistance."
+    },
+    {
+      "q": "Which international quality standards do you comply with?",
+      "a": "We strictly comply with ISO 9001:2015 (Quality), ISO 14001 (Environment), and API standards for all supplied equipment and services."
+    },
+    {
+      "q": "Can TAMKEEN handle both procurement and installation?",
+      "a": "Yes. We offer full turnkey services — from engineering design and global procurement to on-site installation, testing, and commissioning."
+    },
+    {
+      "q": "Do you serve international clients?",
+      "a": "Absolutely. We currently serve clients across 12 countries spanning South Asia, the Middle East, and Southeast Asia, with a robust global logistics network."
+    }
+  ],
+  "footerLinks": {
+    "quickLinks": ["Home", "About", "Services", "Projects", "Contact"],
+    "address": "G-21 Sector-3, Noida, Uttar Pradesh, India",
+    "phone": "+91 7011123269",
+    "email": "contact@tamkeen.com"
+  }
+}

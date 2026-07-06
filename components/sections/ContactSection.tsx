@@ -86,11 +86,12 @@ export default function ContactSection() {
         </motion.div>
 
         {/* Quick contact info strip */}
-        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
           {[
             { Icon: FaPhone,         label: 'Call Us',       value: footerLinks.phone,   href: `tel:${footerLinks.phone}` },
             { Icon: FaEnvelope,      label: 'Email Us',      value: footerLinks.email,   href: `mailto:${footerLinks.email}` },
-            { Icon: FaMapMarkerAlt,  label: 'Visit Us',      value: footerLinks.address, href: '#' },
+            { Icon: FaMapMarkerAlt,  label: 'Muscat Office', value: footerLinks.address, href: '#' },
+            { Icon: FaMapMarkerAlt,  label: 'Duqm Office',   value: footerLinks.address2, href: '#' },
           ].map(({ Icon, label, value, href }) => (
             <motion.a
               key={label}

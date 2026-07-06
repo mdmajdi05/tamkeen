@@ -221,7 +221,10 @@ export default function Footer() {
                 >
                   <FaMapMarkerAlt className="text-xs" style={{ color: '#22C55E' }} />
                 </div>
-                <span className="leading-relaxed">{footerLinks.address}</span>
+                <div className="flex flex-col gap-2">
+                  <span className="leading-relaxed">{footerLinks.address}</span>
+                  <span className="leading-relaxed text-gray-500">{footerLinks.address2}</span>
+                </div>
               </li>
               <li>
                 <a

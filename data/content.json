@@ -234,8 +234,12 @@
   ],
   "footerLinks": {
     "quickLinks": ["Home", "About", "Services", "Projects", "Contact"],
-    "address": "Muscat Office\nGhala Industrial Area, Al Ansari Street\nMuscat 112\nSultanate of Oman\n\n\nDuqm Office\nDuqm Industrial Area\nWilayat of Duqm\nAl Wusta Governorate 700\nSultanate of Oman\n\nContact: +968 9524 8296",
-    "phone": "+91 7011123269",
+    "address": "Muscat Office Ghala Industrial Area, Al Ansari Street Muscat 112 Sultanate of Oman",
+
+"address2":   "Duqm Office Duqm Industrial Area Wilayat of Duqm Al Wusta Governorate 700 Sultanate of Oman",
+
+
+    "phone":"+968 9524 8296",
     "email": "contact@tamkeen.com"
   }
 }

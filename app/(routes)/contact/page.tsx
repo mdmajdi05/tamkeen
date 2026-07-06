@@ -92,6 +92,7 @@ export default function ContactPage() {
                 <ul className="space-y-5">
                   {[
                     { Icon: FaMapMarkerAlt, label: 'Address',        value: footerLinks.address, href: '#' },
+                    { Icon: FaMapMarkerAlt, label: 'Address',        value: footerLinks.address2, href: '#' },
                     { Icon: FaPhone,        label: 'Phone',          value: footerLinks.phone,   href: `tel:${footerLinks.phone}` },
                     { Icon: FaEnvelope,     label: 'Email',          value: footerLinks.email,   href: `mailto:${footerLinks.email}` },
                     { Icon: FaClock,        label: 'Support',        value: '24 / 7 Emergency Hotline',  href: '#' },

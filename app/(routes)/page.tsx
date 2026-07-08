@@ -12,14 +12,32 @@ import Testimonials     from '@/components/sections/Testimonials';
 import FAQ              from '@/components/sections/FAQ';
 import ContactSection   from '@/components/sections/ContactSection';
 import Footer           from '@/components/sections/Footer';
+import { FaqSchema, BreadcrumbSchema } from '@/components/JsonLd';
+import content from '@/data/content.json';
 
 export const metadata: Metadata = {
-  title: 'TAMKEEN | Energy Solutions & General Trading',
+  title: { absolute: 'TAMKEEN | Energy Solutions & General Trading' },
+  description:
+    'TAMKEEN is a premier engineering solutions provider — power generation, marine automation, solar EV infrastructure, turbine services. Serving 12 countries.',
+  openGraph: {
+    title: 'TAMKEEN | Energy Solutions & General Trading',
+    description:
+      'Turnkey industrial energy solutions — power generation, marine automation, solar EV infrastructure, and turbine lifecycle services.',
+    url: 'https://tamkeen-es.com',
+    images: [{ url: '/tamkeen-logo.jpeg', width: 1200, height: 630, alt: 'TAMKEEN Home' }],
+  },
+  twitter: {
+    title: 'TAMKEEN | Energy Solutions & General Trading',
+    description:
+      'Turnkey industrial energy solutions — power generation, marine automation, solar EV infrastructure, and turbine lifecycle services.',
+    images: ['/tamkeen-logo.jpeg'],
+  },
 };
 
 export default function HomePage() {
   return (
     <main>
+      <FaqSchema faqs={content.faqs} />
       <Navbar />
       <Hero />
       <Stats />

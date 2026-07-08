@@ -4,7 +4,7 @@
  * Priority chain for API_URL:
  *   1. window.__RUNTIME_CONFIG__.API_URL  (edit /public/config.js, no rebuild)
  *   2. process.env.NEXT_PUBLIC_API_URL    (build-time env, rebuild needed)
- *   3. null → fall back to local JSON
+ *   3. https://tamkeen-es.com            (hardcoded fallback)
  *
  * Expected backend REST contract:
  *   GET /api/site         → SiteConfig
@@ -37,7 +37,7 @@ function getApiUrl(): string | null {
   }
   const envUrl = process.env.NEXT_PUBLIC_API_URL;
   if (envUrl && envUrl.trim() !== '') return envUrl.trim();
-  return null;
+  return 'https://tamkeen-es.com';
 }
 
 async function apiFetch<T>(path: string, fallback: T): Promise<T> {
@@ -82,5 +82,7 @@ export async function getAllData(): Promise<SiteData> {
   return {
     site, hero, heroSlides, stats, services, about,
     process, projects, team, whyChoose, testimonials, faqs, footerLinks,
+    blogPosts: [],
+    productCategories: [],
   };
 }

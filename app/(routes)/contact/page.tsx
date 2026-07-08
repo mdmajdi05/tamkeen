@@ -4,11 +4,26 @@ import Navbar      from '@/components/sections/Navbar';
 import Footer      from '@/components/sections/Footer';
 import ContactForm from '@/components/forms/ContactForm';
 import content     from '@/data/content.json';
+import { BreadcrumbSchema } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
   description:
-    'Get in touch with TAMKEEN for engineering consultations, project proposals, and 24/7 technical support.',
+    'Get in touch with TAMKEEN for engineering consultations, project proposals, and 24/7 technical support. Call +968 9524 8296 or email contact@tamkeen-es.com.',
+  alternates: { canonical: 'https://tamkeen-es.com/contact/' },
+  openGraph: {
+    title: 'Contact Us | TAMKEEN',
+    description:
+      'Reach TAMKEEN for engineering consultations, project proposals, and 24/7 technical support.',
+    url: 'https://tamkeen-es.com/contact/',
+    images: [{ url: '/tamkeen-logo.jpeg', width: 1200, height: 630, alt: 'Contact TAMKEEN' }],
+  },
+  twitter: {
+    title: 'Contact Us | TAMKEEN',
+    description:
+      'Reach TAMKEEN for engineering consultations, project proposals, and 24/7 technical support.',
+    images: ['/tamkeen-logo.jpeg'],
+  },
 };
 
 export default function ContactPage() {
@@ -17,6 +32,12 @@ export default function ContactPage() {
 
   return (
     <main className="bg-white dark:bg-gray-950">
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: 'https://tamkeen-es.com/' },
+          { name: 'Contact Us', url: 'https://tamkeen-es.com/contact/' },
+        ]}
+      />
       <Navbar />
 
       {/* ── Hero ── */}

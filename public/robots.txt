@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Crawl delay for polite crawling
+Crawl-Delay: 10
+
+# Sitemap location
+Sitemap: https://tamkeen-es.com/sitemap.xml

@@ -1,0 +1,16 @@
+{
+  "name": "TAMKEEN — Energy Solutions & General Trading",
+  "short_name": "TAMKEEN",
+  "description": "Premier engineering solutions provider — power distribution, marine automation, solar EV infrastructure, and turbine services.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1565C0",
+  "icons": [
+    {
+      "src": "/tamkeen-logo.jpeg",
+      "sizes": "any",
+      "type": "image/jpeg"
+    }
+  ]
+}

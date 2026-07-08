@@ -30,7 +30,7 @@ export default function Testimonials() {
             className="pointer-events-none absolute -top-4 left-1/2 -translate-x-1/2 text-[8rem] font-extrabold leading-none select-none opacity-[0.04]"
             style={{ backgroundImage: 'linear-gradient(135deg,#1565C0,#22C55E)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
           >
-            "
+            &ldquo;
           </div>
 
           {/* Card */}

@@ -11,6 +11,7 @@ import Navbar  from '@/components/sections/Navbar';
 import Footer  from '@/components/sections/Footer';
 import content from '@/data/content.json';
 import type { Service } from '@/lib/types';
+import { BreadcrumbSchema, ServiceSchema } from '@/components/JsonLd';
 
 const iconMap: Record<string, React.ElementType> = {
   FaBolt, FaShip, FaMicrochip, FaSolarPanel, FaOilCan, FaCogs,
@@ -90,7 +91,24 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const service = content.services.find((s) => s.id === params.id);
   if (!service) return { title: 'Service Not Found' };
-  return { title: service.title, description: service.description };
+  const url = `https://tamkeen-es.com/services/${service.id}/`;
+  return {
+    title: service.title,
+    description: service.description,
+    alternates: { canonical: url },
+    openGraph: {
+      title: `${service.title} | TAMKEEN`,
+      description: service.description,
+      url,
+      images: [{ url: '/tamkeen-logo.jpeg', width: 1200, height: 630, alt: service.title }],
+    },
+    twitter: {
+      title: `${service.title} | TAMKEEN`,
+      description: service.description,
+      images: ['/tamkeen-logo.jpeg'],
+    },
+    robots: { index: true, follow: true },
+  };
 }
 
 export default function ServiceDetailPage({ params }: { params: { id: string } }) {
@@ -107,6 +125,18 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
 
   return (
     <main className="bg-white dark:bg-gray-950">
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: 'https://tamkeen-es.com/' },
+          { name: 'Services', url: 'https://tamkeen-es.com/services/' },
+          { name: service.title, url: `https://tamkeen-es.com/services/${service.id}/` },
+        ]}
+      />
+      <ServiceSchema
+        name={service.title}
+        description={service.description}
+        url={`https://tamkeen-es.com/services/${service.id}/`}
+      />
       <Navbar />
 
       {/* ── Hero banner ── */}

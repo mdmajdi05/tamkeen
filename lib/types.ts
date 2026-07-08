@@ -86,6 +86,25 @@ export interface FooterLinks {
   email: string;
 }
 
+export interface BlogPost {
+  id: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  category: string;
+  author: string;
+  image: string;
+  slug: string;
+}
+
+export interface ProductCategory {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  features: string[];
+}
+
 export interface SiteData {
   site: SiteConfig;
   hero: Hero;
@@ -100,6 +119,8 @@ export interface SiteData {
   testimonials: Testimonial[];
   faqs: FAQ[];
   footerLinks: FooterLinks;
+  blogPosts: BlogPost[];
+  productCategories: ProductCategory[];
 }
 
 declare global {

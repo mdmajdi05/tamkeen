@@ -90,6 +90,8 @@ export default function Navbar() {
           <ThemeToggle />
           <button
             aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
             onClick={() => setMenuOpen((o) => !o)}
             className="flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200 dark:border-gray-700
                        text-gray-600 dark:text-gray-300 hover:text-brand-blue dark:hover:text-brand-green
@@ -102,6 +104,9 @@ export default function Navbar() {
 
       {/* ── Mobile menu ── */}
       <div
+        id="mobile-menu"
+        role="region"
+        aria-label="Mobile navigation"
         className={`overflow-hidden transition-all duration-300 lg:hidden
                     bg-white dark:bg-gray-950 border-b border-gray-100 dark:border-gray-800
                     ${menuOpen ? 'max-h-80' : 'max-h-0'}`}

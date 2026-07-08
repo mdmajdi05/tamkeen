@@ -24,7 +24,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const runtimeUrl = window.__RUNTIME_CONFIG__?.API_URL?.trim();
     const envUrl = process.env.NEXT_PUBLIC_API_URL?.trim();
-    const apiUrl = runtimeUrl || envUrl || '';
+    const apiUrl = runtimeUrl || envUrl || 'https://tamkeen-es.com';
     if (!apiUrl) return;
 
     setIsLoading(true);

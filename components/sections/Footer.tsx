@@ -81,6 +81,7 @@ export default function Footer() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="your@email.com"
+                aria-label="Email for newsletter subscription"
                 className="flex-1 rounded-full border-0 bg-white/20 px-5 py-3 text-sm text-white placeholder-white/60
                            outline-none ring-1 ring-white/30 transition focus:ring-white focus:bg-white/30"
               />

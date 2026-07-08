@@ -81,6 +81,7 @@ export interface FAQ {
 export interface FooterLinks {
   quickLinks: string[];
   address: string;
+  address2: string;
   phone: string;
   email: string;
 }

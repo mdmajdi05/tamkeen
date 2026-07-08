@@ -59,7 +59,7 @@ export default function Team() {
                     <FaLinkedin className="text-sm" />
                   </a>
                   <a
-                    href={`mailto:contact@tamkeen.com`}
+                    href={`mailto:contact@tamkeen-es.com`}
                     aria-label="Email"
                     className="flex h-9 w-9 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-sm
                                transition-all hover:bg-brand-green hover:scale-110"

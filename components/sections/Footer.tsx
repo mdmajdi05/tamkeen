@@ -215,16 +215,32 @@ export default function Footer() {
               style={{ background: 'linear-gradient(to right,#1565C0,#22C55E)' }}
             />
             <ul className="space-y-5">
-              <li className="flex items-start gap-3 text-sm text-gray-400">
-                <div
-                  className="mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg"
-                  style={{ background: 'linear-gradient(135deg,rgba(21,101,192,0.3),rgba(34,197,94,0.3))' }}
-                >
-                  <FaMapMarkerAlt className="text-xs" style={{ color: '#22C55E' }} />
+              <li>
+                <div className="flex items-start gap-3 text-sm text-gray-400">
+                  <div
+                    className="mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg"
+                    style={{ background: 'linear-gradient(135deg,rgba(21,101,192,0.3),rgba(34,197,94,0.3))' }}
+                  >
+                    <FaMapMarkerAlt className="text-xs" style={{ color: '#22C55E' }} />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-wider text-white">Muscat Office</p>
+                    <span className="leading-relaxed">{footerLinks.address}</span>
+                  </div>
                 </div>
-                <div className="flex flex-col gap-2">
-                  <span className="leading-relaxed">{footerLinks.address}</span>
-                  <span className="leading-relaxed text-gray-500">{footerLinks.address2}</span>
+              </li>
+              <li>
+                <div className="flex items-start gap-3 text-sm text-gray-400">
+                  <div
+                    className="mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg"
+                    style={{ background: 'linear-gradient(135deg,rgba(21,101,192,0.3),rgba(34,197,94,0.3))' }}
+                  >
+                    <FaMapMarkerAlt className="text-xs" style={{ color: '#22C55E' }} />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-wider text-white">Duqm Office</p>
+                    <span className="leading-relaxed">{footerLinks.address2}</span>
+                  </div>
                 </div>
               </li>
               <li>

@@ -109,8 +109,21 @@
     }
   ],
   "about": {
-    "title": "More than a supplier. We are your operational backbone.",
-    "description": "TAMKEEN bridges the gap between complex engineering blueprints and on-ground execution. Our ethos is built on reliability—ensuring that every megawatt and every marine vessel operates at peak efficiency, safely, and without interruption. We combine a global sourcing network with deep local technical expertise to solve the toughest energy challenges."
+    "title": "Engineering Excellence Across the Complete Project Lifecycle",
+    "description": "Tamkeen Energy Solutions & General Trading LLC is an Oman-based Engineering, Procurement, and Construction (EPC) company delivering integrated solutions to the Power, Oil & Gas, Industrial, Infrastructure, and Renewable Energy sectors. We provide complete project lifecycle services \u2014 from concept, feasibility, engineering, and procurement through construction, installation, testing, commissioning, start-up, operation, maintenance, and long-term asset support.\n\nOur multidisciplinary expertise spans Electrical, Mechanical, Control, Instrumentation, and Civil engineering, enabling us to execute projects safely, efficiently, and to the highest international standards. Whether developing a new facility, expanding existing infrastructure, or modernizing critical assets, we are committed to delivering reliable, cost-effective, and sustainable solutions.\n\nTamkeen has extensive capabilities in conventional and renewable power generation, including gas turbine power plants, combined-cycle power plants (CCPP), diesel and dual-fuel power plants, solar photovoltaic (PV) systems, battery energy storage systems (BESS), substations, transmission and distribution systems, and balance-of-plant (BOP) infrastructure.\n\nAs gas turbine specialists, we provide end-to-end engineering and technical services covering EPC, installation, testing, commissioning, plant start-up, synchronization, performance testing, operation & maintenance, outages, overhauls, upgrades, retrofits, troubleshooting, and long-term technical support. Our objective is to maximize plant reliability, availability, efficiency, and operational performance throughout the asset lifecycle.\n\nIn addition to our EPC capabilities, Tamkeen offers industrial manpower solutions, equipment procurement, OEM and aftermarket spare parts supply, and heavy equipment and earthmoving machinery rental to support construction, infrastructure, and industrial projects. By combining engineering expertise with dependable project execution, we serve as a single-source partner for our clients\u2019 technical and operational needs.\n\nDriven by safety, quality, innovation, and integrity, Tamkeen is committed to building long-term partnerships and delivering engineering solutions that power industries, strengthen infrastructure, and create sustainable value across Oman, the GCC, and the wider Middle East.",
+    "vision": "To be a leading EPC and engineering solutions provider in the Middle East, recognized for technical excellence, innovation, and reliable project delivery across the energy and industrial sectors.",
+    "mission": "To deliver safe, efficient, and sustainable engineering solutions through world-class EPC services, commissioning, start-up, operation & maintenance, specialized technical expertise, and dependable project execution that exceed our clients\u2019 expectations.",
+    "capabilities": {
+      "title": "Our Core Capabilities",
+      "items": [
+        "EPC project delivery for power generation, oil & gas, and industrial infrastructure across the GCC and Middle East",
+        "Gas turbine specialist services \u2014 installation, commissioning, synchronization, performance testing, overhauls, upgrades, and long-term technical support",
+        "Conventional and renewable power generation including gas turbine plants, combined-cycle (CCPP), diesel/dual-fuel plants, solar PV, and battery energy storage systems (BESS)",
+        "Substation, transmission & distribution, and balance-of-plant (BOP) infrastructure engineering",
+        "Industrial manpower solutions, OEM and aftermarket spare parts supply, and heavy equipment / earthmoving machinery rental",
+        "Electrical, Mechanical, Control & Instrumentation, and Civil engineering for brownfield and greenfield projects"
+      ]
+    }
   },
   "process": [
     {

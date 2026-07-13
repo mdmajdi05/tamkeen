@@ -3,27 +3,77 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
 import ThemeToggle from '@/components/ui/ThemeToggle';
 
-const navLinks = [
-  { label: 'Home',     href: '/' },
-  { label: 'Services', href: '/services' },
-  { label: 'Products', href: '/products' },
-  { label: 'Blog',    href: '/blog' },
-  { label: 'About',    href: '/about' },
-  { label: 'Contact',  href: '/contact' },
+interface NavChild {
+  label: string;
+  href: string;
+}
+
+interface NavLink {
+  label: string;
+  href: string;
+  children?: NavChild[];
+}
+
+const navLinks: NavLink[] = [
+  { label: 'Home', href: '/' },
+  {
+    label: 'About Us',
+    href: '/about',
+    children: [
+      { label: 'Overview', href: '/about#overview' },
+      { label: 'Vision & Mission', href: '/about#vision-mission' },
+      { label: 'Capabilities', href: '/about#capabilities' },
+    ],
+  },
+  {
+    label: 'Services',
+    href: '/services',
+    children: [
+      { label: 'Power Generation', href: '/services/power-gen' },
+      { label: 'Oil & Gas', href: '/services/oil-gas' },
+      { label: 'Renewable Energy', href: '/services/ev-solar' },
+      { label: 'Industrial Electrical', href: '/services/industrial-electrical' },
+      { label: 'Marine & Offshore', href: '/services/marine-auto' },
+      { label: 'Turbine Lifecycle', href: '/services/turbine-services' },
+    ],
+  },
+  {
+    label: 'Products',
+    href: '/products',
+    children: [
+      { label: 'Turbines & Generators', href: '/products#turbines-generators' },
+      { label: 'Switchgear & Panels', href: '/products#switchgear-panels' },
+      { label: 'Marine Systems', href: '/products#marine-systems' },
+      { label: 'Solar PV & Inverters', href: '/products#solar-pv' },
+      { label: 'EV Charging Stations', href: '/products#ev-charging' },
+      { label: 'Industrial Valves', href: '/products#industrial-valves' },
+      { label: 'PLC & SCADA', href: '/products#plc-scada' },
+      { label: 'Turbine Spare Parts', href: '/products#turbine-spares' },
+    ],
+  },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled]   = useState(false);
   const [menuOpen, setMenuOpen]   = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [openMobileSub, setOpenMobileSub] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  const closeAll = () => {
+    setMenuOpen(false);
+    setOpenMobileSub(null);
+  };
 
   return (
     <header
@@ -50,26 +100,57 @@ export default function Navbar() {
         </Link>
 
         {/* ── Desktop links ── */}
-        <ul className="hidden items-center gap-8 lg:flex">
+        <ul className="hidden items-center gap-1 lg:flex">
           {navLinks.map((link) => (
-            <li key={link.href}>
+            <li
+              key={link.href}
+              className="relative"
+              onMouseEnter={() => link.children && setOpenDropdown(link.label)}
+              onMouseLeave={() => setOpenDropdown(null)}
+            >
               <Link
                 href={link.href}
-                className="relative text-sm font-medium text-gray-700 dark:text-gray-200
-                           transition-colors hover:text-brand-blue dark:hover:text-brand-green
-                           after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0
-                           after:rounded-full after:transition-all after:duration-300
-                           hover:after:w-full"
-                style={{
-                  ['--tw-after-bg' as string]: 'linear-gradient(to right, #1565C0, #22C55E)',
-                }}
+                className="relative flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 transition-colors hover:text-brand-blue dark:hover:text-brand-green"
               >
-                <span>{link.label}</span>
+                {link.label}
+                {link.children && (
+                  <FaChevronDown
+                    className={`text-[10px] transition-transform duration-200 ${
+                      openDropdown === link.label ? 'rotate-180' : ''
+                    }`}
+                  />
+                )}
                 <span
-                  className="absolute bottom-[-4px] left-0 h-[2px] w-0 rounded-full transition-all duration-300 group-hover:w-full"
-                  style={{ background: 'linear-gradient(to right,#1565C0,#22C55E)' }}
+                  className="absolute bottom-0 left-3 right-3 h-[2px] rounded-full transition-all duration-300"
+                  style={{
+                    background: 'linear-gradient(to right,#1565C0,#22C55E)',
+                    opacity: openDropdown === link.label ? 1 : 0,
+                  }}
                 />
               </Link>
+
+              {/* ── Desktop dropdown ── */}
+              {link.children && (
+                <div
+                  className={`absolute left-0 top-full mt-1 w-56 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-950 shadow-lg transition-all duration-200 ${
+                    openDropdown === link.label
+                      ? 'visible translate-y-0 opacity-100'
+                      : 'invisible -translate-y-1 opacity-0'
+                  }`}
+                >
+                  <div className="p-2">
+                    {link.children.map((child) => (
+                      <Link
+                        key={child.href}
+                        href={child.href}
+                        className="block rounded-lg px-3 py-2.5 text-sm font-medium text-gray-600 dark:text-gray-400 transition-colors hover:bg-gradient-to-r hover:from-brand-blue/10 hover:to-brand-green/10 hover:text-brand-blue dark:hover:text-brand-green"
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
             </li>
           ))}
         </ul>
@@ -109,27 +190,66 @@ export default function Navbar() {
         aria-label="Mobile navigation"
         className={`overflow-hidden transition-all duration-300 lg:hidden
                     bg-white dark:bg-gray-950 border-b border-gray-100 dark:border-gray-800
-                    ${menuOpen ? 'max-h-80' : 'max-h-0'}`}
+                    ${menuOpen ? 'max-h-[600px]' : 'max-h-0'}`}
       >
         <ul className="flex flex-col gap-1 px-5 py-4">
           {navLinks.map((link) => (
             <li key={link.href}>
-              <Link
-                href={link.href}
-                onClick={() => setMenuOpen(false)}
-                className="block rounded-lg px-4 py-2.5 text-sm font-medium
-                           text-gray-700 dark:text-gray-200
-                           hover:bg-gradient-to-r hover:from-brand-blue/10 hover:to-brand-green/10
-                           hover:text-brand-blue dark:hover:text-brand-green transition-all"
-              >
-                {link.label}
-              </Link>
+              {link.children ? (
+                <>
+                  <button
+                    onClick={() => setOpenMobileSub(openMobileSub === link.label ? null : link.label)}
+                    className="flex w-full items-center justify-between rounded-lg px-4 py-2.5 text-sm font-medium
+                               text-gray-700 dark:text-gray-200
+                               hover:bg-gradient-to-r hover:from-brand-blue/10 hover:to-brand-green/10
+                               hover:text-brand-blue dark:hover:text-brand-green transition-all"
+                  >
+                    {link.label}
+                    <FaChevronDown
+                      className={`text-[10px] transition-transform duration-200 ${
+                        openMobileSub === link.label ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </button>
+                  <div
+                    className={`overflow-hidden transition-all duration-200 ${
+                      openMobileSub === link.label ? 'max-h-80' : 'max-h-0'
+                    }`}
+                  >
+                    <ul className="ml-3 border-l-2 border-gray-100 dark:border-gray-800 pl-3 py-1">
+                      {link.children.map((child) => (
+                        <li key={child.href}>
+                          <Link
+                            href={child.href}
+                            onClick={closeAll}
+                            className="block rounded-lg px-4 py-2 text-sm text-gray-500 dark:text-gray-400
+                                       hover:text-brand-blue dark:hover:text-brand-green transition-colors"
+                          >
+                            {child.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </>
+              ) : (
+                <Link
+                  href={link.href}
+                  onClick={closeAll}
+                  className="block rounded-lg px-4 py-2.5 text-sm font-medium
+                             text-gray-700 dark:text-gray-200
+                             hover:bg-gradient-to-r hover:from-brand-blue/10 hover:to-brand-green/10
+                             hover:text-brand-blue dark:hover:text-brand-green transition-all"
+                >
+                  {link.label}
+                </Link>
+              )}
             </li>
           ))}
           <li className="pt-2">
             <Link
               href="/contact"
-              onClick={() => setMenuOpen(false)}
+              onClick={closeAll}
               className="btn-brand block text-center text-sm"
             >
               Get a Quote

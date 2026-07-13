@@ -38,6 +38,12 @@ export interface Service {
 export interface About {
   title: string;
   description: string;
+  vision: string;
+  mission: string;
+  capabilities: {
+    title: string;
+    items: string[];
+  };
 }
 
 export interface ProcessStep {

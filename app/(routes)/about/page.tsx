@@ -30,8 +30,8 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   const { about } = content;
-
   const paragraphs = about.description.split('\n\n');
+  const [first, ...rest] = paragraphs;
 
   return (
     <main className="bg-white dark:bg-gray-950">
@@ -43,8 +43,8 @@ export default function AboutPage() {
       />
       <Navbar />
 
-      {/* ── Hero ── */}
-      <section id="overview" className="relative overflow-hidden pt-32 pb-20">
+      {/* Hero */}
+      <section className="relative overflow-hidden pt-32 pb-20">
         <div
           className="absolute inset-0"
           style={{
@@ -61,7 +61,7 @@ export default function AboutPage() {
           }}
         />
 
-        <div className="relative mx-auto max-w-5xl px-6 text-center lg:px-8">
+        <div className="relative mx-auto max-w-4xl px-6 text-center lg:px-8">
           <span
             className="mb-4 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white"
             style={{ background: 'linear-gradient(135deg,#1565C0,#22C55E)' }}
@@ -71,14 +71,17 @@ export default function AboutPage() {
           <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl lg:text-6xl leading-tight">
             {about.title}
           </h1>
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-gray-500 dark:text-gray-400">
+            {first}
+          </p>
         </div>
       </section>
 
-      {/* ── About Content ── */}
+      {/* Full About Content */}
       <section className="py-16 bg-white dark:bg-gray-900">
-        <div className="mx-auto max-w-5xl px-6 lg:px-8">
-          <div className="space-y-6 text-base leading-relaxed text-gray-600 dark:text-gray-400">
-            {paragraphs.map((p, i) => (
+        <div className="mx-auto max-w-4xl px-6 lg:px-8">
+          <div className="space-y-5 text-base leading-relaxed text-gray-600 dark:text-gray-400">
+            {rest.map((p, i) => (
               <p key={i}>{p}</p>
             ))}
           </div>
@@ -87,45 +90,33 @@ export default function AboutPage() {
 
       <Stats />
 
-      {/* ── Vision & Mission ── */}
-      <section id="vision-mission" className="py-20 bg-white dark:bg-gray-900">
+      {/* Mission & Vision */}
+      <section className="py-20 bg-white dark:bg-gray-900">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {[
               {
-                label: 'Our Vision',
-                text: about.vision,
-                icon: (
-                  <svg className="h-8 w-8" style={{ color: '#1565C0' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                  </svg>
-                ),
-              },
-              {
                 label: 'Our Mission',
                 text: about.mission,
-                icon: (
-                  <svg className="h-8 w-8" style={{ color: '#22C55E' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
-                  </svg>
-                ),
+                color: '#1565C0',
+              },
+              {
+                label: 'Our Vision',
+                text: about.vision,
+                color: '#22C55E',
               },
             ].map((item) => (
               <div
                 key={item.label}
-                className="group relative overflow-hidden rounded-2xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 p-8 transition-all hover:shadow-lg"
+                className="relative overflow-hidden rounded-2xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 p-8"
               >
                 <div
                   className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl"
                   style={{ background: `linear-gradient(to right,#1565C0,#22C55E)` }}
                 />
-                <div className="mb-4">
-                  {item.icon}
-                </div>
                 <p
                   className="mb-3 text-xs font-bold uppercase tracking-widest"
-                  style={{ color: item.label === 'Our Vision' ? '#1565C0' : '#22C55E' }}
+                  style={{ color: item.color }}
                 >
                   {item.label}
                 </p>
@@ -138,8 +129,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Capabilities ── */}
-      <section id="capabilities" className="py-20 bg-gray-50 dark:bg-gray-950">
+      {/* Capabilities */}
+      <section className="py-20 bg-gray-50 dark:bg-gray-950">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-12">
             <span
@@ -156,7 +147,7 @@ export default function AboutPage() {
             {about.capabilities.items.map((item, i) => (
               <div
                 key={i}
-                className="group rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 transition-all hover:shadow-md hover:border-transparent"
+                className="rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 p-6"
               >
                 <div
                   className="mb-3 flex h-8 w-8 items-center justify-center rounded-lg text-xs font-bold text-white"

@@ -19,48 +19,53 @@ interface NavLink {
 
 const navLinks: NavLink[] = [
   { label: 'Home', href: '/' },
-  {
-    label: 'About Us',
-    href: '/about',
-    children: [
-      { label: 'Overview', href: '/about#overview' },
-      { label: 'Vision & Mission', href: '/about#vision-mission' },
-      { label: 'Capabilities', href: '/about#capabilities' },
-    ],
-  },
+  { label: 'About Us', href: '/about' },
   {
     label: 'Services',
     href: '/services',
     children: [
-      { label: 'Power Generation', href: '/services/power-gen' },
-      { label: 'Oil & Gas', href: '/services/oil-gas' },
-      { label: 'Renewable Energy', href: '/services/ev-solar' },
+      { label: 'Power Generation & Distribution', href: '/services/power-gen' },
+      { label: 'Oil & Gas Equipment', href: '/services/oil-gas' },
+      { label: 'Renewable Energy & Solar', href: '/services/ev-solar' },
       { label: 'Industrial Electrical', href: '/services/industrial-electrical' },
-      { label: 'Marine & Offshore', href: '/services/marine-auto' },
-      { label: 'Turbine Lifecycle', href: '/services/turbine-services' },
+      { label: 'Marine & Offshore Automation', href: '/services/marine-auto' },
+      { label: 'Turbine Lifecycle Services', href: '/services/turbine-services' },
     ],
   },
+  { label: 'Projects', href: '/projects' },
   {
-    label: 'Products',
+    label: 'Parts & Supply',
     href: '/products',
     children: [
       { label: 'Turbines & Generators', href: '/products#turbines-generators' },
-      { label: 'Switchgear & Panels', href: '/products#switchgear-panels' },
-      { label: 'Marine Systems', href: '/products#marine-systems' },
-      { label: 'Solar PV & Inverters', href: '/products#solar-pv' },
+      { label: 'Switchgear & Panel Boards', href: '/products#switchgear-panels' },
+      { label: 'Marine Automation Systems', href: '/products#marine-systems' },
+      { label: 'Solar PV Modules & Inverters', href: '/products#solar-pv' },
       { label: 'EV Charging Stations', href: '/products#ev-charging' },
-      { label: 'Industrial Valves', href: '/products#industrial-valves' },
-      { label: 'PLC & SCADA', href: '/products#plc-scada' },
+      { label: 'Industrial Valves & Fittings', href: '/products#industrial-valves' },
+      { label: 'PLC & SCADA Systems', href: '/products#plc-scada' },
       { label: 'Turbine Spare Parts', href: '/products#turbine-spares' },
     ],
   },
-  { label: 'Blog', href: '/blog' },
+  {
+    label: 'Industries',
+    href: '#',
+    children: [
+      { label: 'Power Generation', href: '/services/power-gen' },
+      { label: 'Oil & Gas', href: '/services/oil-gas' },
+      { label: 'Industrial Manufacturing', href: '/services/industrial-electrical' },
+      { label: 'Infrastructure', href: '/services' },
+      { label: 'Renewable Energy', href: '/services/ev-solar' },
+      { label: 'Marine & Offshore', href: '/services/marine-auto' },
+    ],
+  },
+  { label: 'Careers', href: '/careers' },
   { label: 'Contact', href: '/contact' },
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled]   = useState(false);
-  const [menuOpen, setMenuOpen]   = useState(false);
+  const [scrolled, setScrolled]     = useState(false);
+  const [menuOpen, setMenuOpen]     = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [openMobileSub, setOpenMobileSub] = useState<string | null>(null);
 
@@ -103,31 +108,47 @@ export default function Navbar() {
         <ul className="hidden items-center gap-1 lg:flex">
           {navLinks.map((link) => (
             <li
-              key={link.href}
+              key={link.label}
               className="relative"
               onMouseEnter={() => link.children && setOpenDropdown(link.label)}
               onMouseLeave={() => setOpenDropdown(null)}
             >
-              <Link
-                href={link.href}
-                className="relative flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 transition-colors hover:text-brand-blue dark:hover:text-brand-green"
-              >
-                {link.label}
-                {link.children && (
+              {link.children ? (
+                <button
+                  className="relative flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium
+                             text-gray-700 dark:text-gray-200 transition-colors
+                             hover:text-brand-blue dark:hover:text-brand-green"
+                >
+                  {link.label}
                   <FaChevronDown
                     className={`text-[10px] transition-transform duration-200 ${
                       openDropdown === link.label ? 'rotate-180' : ''
                     }`}
                   />
-                )}
-                <span
-                  className="absolute bottom-0 left-3 right-3 h-[2px] rounded-full transition-all duration-300"
+                  <span
+                    className="absolute bottom-[-4px] left-3 right-3 h-[2px] rounded-full transition-all duration-300"
+                    style={{
+                      background: 'linear-gradient(to right,#1565C0,#22C55E)',
+                      opacity: openDropdown === link.label ? 1 : 0,
+                    }}
+                  />
+                </button>
+              ) : (
+                <Link
+                  href={link.href}
+                  className="relative rounded-lg px-3 py-2 text-sm font-medium
+                             text-gray-700 dark:text-gray-200 transition-colors
+                             hover:text-brand-blue dark:hover:text-brand-green
+                             after:absolute after:bottom-[-4px] after:left-3 after:right-3 after:h-[2px] after:w-0
+                             after:rounded-full after:transition-all after:duration-300
+                             hover:after:w-[calc(100%-24px)]"
                   style={{
-                    background: 'linear-gradient(to right,#1565C0,#22C55E)',
-                    opacity: openDropdown === link.label ? 1 : 0,
+                    ['--tw-after-bg' as string]: 'linear-gradient(to right, #1565C0, #22C55E)',
                   }}
-                />
-              </Link>
+                >
+                  {link.label}
+                </Link>
+              )}
 
               {/* ── Desktop dropdown ── */}
               {link.children && (
@@ -153,17 +174,19 @@ export default function Navbar() {
               )}
             </li>
           ))}
+          <li>
+            <Link
+              href="/contact"
+              className="btn-brand text-sm ml-2"
+            >
+              Get a Quote
+            </Link>
+          </li>
         </ul>
 
         {/* ── Desktop right actions ── */}
         <div className="hidden items-center gap-4 lg:flex">
           <ThemeToggle />
-          <Link
-            href="/contact"
-            className="btn-brand text-sm"
-          >
-            Get a Quote
-          </Link>
         </div>
 
         {/* ── Mobile right actions ── */}
@@ -190,11 +213,11 @@ export default function Navbar() {
         aria-label="Mobile navigation"
         className={`overflow-hidden transition-all duration-300 lg:hidden
                     bg-white dark:bg-gray-950 border-b border-gray-100 dark:border-gray-800
-                    ${menuOpen ? 'max-h-[600px]' : 'max-h-0'}`}
+                    ${menuOpen ? 'max-h-[800px]' : 'max-h-0'}`}
       >
         <ul className="flex flex-col gap-1 px-5 py-4">
           {navLinks.map((link) => (
-            <li key={link.href}>
+            <li key={link.label}>
               {link.children ? (
                 <>
                   <button

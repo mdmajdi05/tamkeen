@@ -82,11 +82,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300
-        ${scrolled
-          ? 'bg-white/95 dark:bg-gray-950/95 backdrop-blur-xl shadow-md border-b border-gray-100 dark:border-gray-800'
-          : 'bg-white/80 dark:bg-gray-950/80 backdrop-blur-sm'
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-950 shadow-md border-b border-gray-100 dark:border-gray-800 transition-all duration-300`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 lg:px-8">
 
@@ -94,7 +90,7 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-3 group">
           <div className="relative h-12 w-36 overflow-hidden">
             <Image
-              src="/tamkeen-logo-header.png"
+              src="/tamkeen-logo.jpeg"
               alt="TAMKEEN Logo"
               fill
               className="object-contain object-left"

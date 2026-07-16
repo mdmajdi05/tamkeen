@@ -105,7 +105,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-5">
               <Image
-                src="/tamkeen-logo.jpeg"
+                src="/tamkeen-logo-footer.png"
                 alt="TAMKEEN Logo"
                 width={140}
                 height={48}

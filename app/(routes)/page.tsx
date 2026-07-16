@@ -24,13 +24,13 @@ export const metadata: Metadata = {
     description:
       'Turnkey industrial energy solutions — power generation, marine automation, solar EV infrastructure, and turbine lifecycle services.',
     url: 'https://tamkeen-es.com',
-    images: [{ url: '/tamkeen-logo-footer.png', width: 1200, height: 630, alt: 'TAMKEEN Home' }],
+    images: [{ url: '/tamkeen-logo.jpeg', width: 1200, height: 630, alt: 'TAMKEEN Home' }],
   },
   twitter: {
     title: 'TAMKEEN | Energy Solutions & General Trading',
     description:
       'Turnkey industrial energy solutions — power generation, marine automation, solar EV infrastructure, and turbine lifecycle services.',
-    images: ['/tamkeen-logo-footer.png'],
+    images: ['/tamkeen-logo.jpeg'],
   },
 };
 

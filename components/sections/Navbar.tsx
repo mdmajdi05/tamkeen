@@ -94,7 +94,7 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-3 group">
           <div className="relative h-12 w-36 overflow-hidden">
             <Image
-              src="/tamkeen-logo.jpeg"
+              src="/tamkeen-logo-header.png"
               alt="TAMKEEN Logo"
               fill
               className="object-contain object-left"
